@@ -1,0 +1,30 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.8.RELEASE'
+	}
+	
+    repositories {
+    	mavenLocal()
+    	mavenCentral()
+    }
+    
+    dependencies {
+    	classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 8
+targetCompatibility = 8
+
+repositories {
+	mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+	implementation("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+	implementation('org.springframework.integration:spring-integration-mqtt:5.2.0.RELEASE')
+}
